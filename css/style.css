@@ -1,0 +1,183 @@
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+/* Custom styles can be added below */
+/*parent*/ body { 
+    font-family: 'Cairo', sans-serif;
+    background-color: #fef4e8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+/*child*/ main {
+    padding: 1.5rem;
+    flex: 1;
+    margin-right: 10rem;
+    min-height: 100vh;
+    margin-inline: auto;
+    max-width: 56rem;
+} 
+
+/*for test*/h1 {
+@apply text-3xl font-bold mb-4 text-[#c8095e];
+}
+
+p{
+@apply text-lg text-[#2a2a2a];
+}
+
+/* Sidebar styles */aside {
+    background-color: #c8095e;
+    width: 10rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: fixed;
+    right: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/*logo*/ .logo {
+@apply md-8 w-4 h-4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+nav{
+    padding: 1rem; 
+    width: 100%; 
+}
+
+ul {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-align: center;
+    font-weight: bold;
+    color: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+li{
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-top: 0.5rem 0.5rem;
+    color: #2a2a2a;
+    transition: all 0.3s;
+}
+
+li:hover {
+    transform: translateY(-0.25rem);
+    color: white;
+    cursor: pointer;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    color: #2a2a2a;
+    transition: all 0.3s;
+}
+
+span {
+    opacity: 0;
+    transition: opacity 0.5s;
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+    order: 1;
+    display: none;
+}
+
+a:hover span {
+    opacity: 1;
+    display: block;
+}
+
+i {
+    font-size: 1.25rem;
+    transition: color 0.3s, transform 0.5s;
+    order: 2;
+}
+
+a:hover i {
+    color: white;
+    transform: scale(1.2);
+}
+
+/*buttons*/ .btnOut, .btnIn {
+    background-color: #970747;
+    color: black;
+    border: none;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 0.5rem;
+}
+.btnOut:hover, .btnIn:hover {
+    background-color: #660530;
+    color: white;   
+}
+/* end sidebar=header */
+
+/* search bar */
+.search-bar {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.search-bar input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    width: 70%;
+}
+.search-bar button {
+    padding: 0.5rem 1rem;
+    background-color: #c8095e;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.search-bar button:hover {
+    background-color: #a0064b;
+}
+/* end search bar */
+
+/* slider */
+.slider {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.slider img {
+    width: 100%;
+    max-width: 50rem;
+    height: auto;
+}
+/* end slider */
