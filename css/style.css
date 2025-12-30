@@ -176,8 +176,61 @@ a:hover i {
     gap: 1rem;
 }
 .slider img {
-    width: 100%;
-    max-width: 50rem;
-    height: auto;
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+    border-radius: 0.5rem;
 }
+
+.container-slider {
+    padding: 2rem;
+}
+
+.sliderWrapper {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 55%, 0.233);
+    border-radius: 0.5rem;
+    scrollbar-width: none; /* Firefox */
+    position: relative;
+}
+
+.slider-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10 ;
+}
+
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    opacity: 0.75;
+    transition: opacity 250ms;
+    border-radius: 50%;
+    background-color: hsla(0, 0%, 56%, 0.758);
+    display: inline-block;
+}
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+.slider ::-webkit-scrollbar{
+    display: none; /* Chrome, Safari, Opera */
+}
+
 /* end slider */

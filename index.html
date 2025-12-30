@@ -10,6 +10,7 @@
     <title>Femme</title>
 </head>
 <body>
+
     <!--sidebar-->
     <aside>
         <img src="IMG/2.logo.png" alt="Logo">
@@ -40,24 +41,38 @@
                         </a>
                     </li>          
                 </ul>
+
                 <!-- button -->
                  <button class="btnOut">تسجيل الخروج</button>
                  <button class="btnIn">تسجيل الدخول</button>
             </nav>
     </aside>
+
     <!--main content-->
     <main>
+
         <!-- search bar -->
          <div class="search-bar">
             <input type="text" placeholder="ابحث عن منتجات...">
             <button><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
+
             <!-- slider -->
-            <div class="slider">
-                <img src="IMG/Logo-2.png" alt="Slider Image 1">
-                <img src="IMG/Logo-2.png" alt="Slider Image 2">
-                <img src="IMG/Logo-2.png" alt="Slider Image 3">
+             <div class="container-slider"> 
+            <div class="sliderWrapper">
+                <div class="slider-nav">
+                    <a href="#1"></a>
+                    <a href="#2"></a>   
+                    <a href="#3"></a>
+                </div>
+                <div class="slider">
+                <img id="1" src="IMG/Logo-2.png" alt="Slider Image 1">
+                <img id="2" src="IMG/2.logo.png" alt="Slider Image 2">
+                <img id="3" src="IMG/LOGO.png" alt="Slider Image 3">
+                </div>
+                </div>
             </div>
+        </section>
     </main>
     <script src="main.js"></script>
 </body>
