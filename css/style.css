@@ -330,3 +330,11 @@ main {
     }
 }
 /* end magic */
+
+/*login*/
+
+.login-logo img{
+    width: 120px;
+    margin-bottom:1.5rem ;
+
+}
