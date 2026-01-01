@@ -1,8 +1,8 @@
 @import "tailwindcss/preflight";
 @tailwind utilities;
 
-/* Custom styles can be added below */
-/*parent*/ body { 
+
+body { 
     font-family: 'Cairo', sans-serif;
     background-color: #fef4e8;
     margin: 0;
@@ -11,46 +11,53 @@
     flex-direction: row;
 }
 
-/*child*/ main {
-    padding: 1.5rem;
-    flex: 1;
-    margin-right: 10rem;
-    min-height: 100vh;
-    margin-inline: auto;
-    max-width: 56rem;
-} 
 
-p{
-@apply text-lg text-[#2a2a2a];
-}
-
-/* Sidebar styles */aside {
+/*header styles*/ header {
     background-color: #c8095e;
-    width: 10rem;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    width: 100%; 
+    height: 5rem;
+    display: flex; 
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     gap: 0.5rem;
     position: fixed;
     right: 0;
     list-style: none;
-    padding: 0;
+    padding: 0 0.5rem;
     margin: 0;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /*shadow on left side*/
+    z-index: 1000; /*make sure header is on top*/
 }
 
 /*logo*/ .logo {
-@apply md-8 w-4 h-4;
+    height: 100%;
+    width: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 1rem 0;
+    justify-content: flex-start;
+    padding-right: 1rem;
+    text-decoration: none;/*remove underline*/
+    cursor: pointer;
+    padding: 0; 
 }
 
+.logo img {
+    height: 100%;/*make the logo fit the header height*/
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/*end logo*/ 
+ 
 nav{
-    padding: 1rem; 
-    width: 100%; 
+    padding: 0.5rem; 
+    gap: 2rem; /*space between ul and logo*/
+    display: flex;
+    flex: 0 0 400px; /*fixed width for nav*/
+    justify-content: flex-end;
+    align-items: center;
 }
 
 ul {
@@ -60,13 +67,17 @@ ul {
     font-weight: bold;
     color: #2a2a2a;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: none;/*remove bullets*/
+    margin: 0;
+    padding: 2rem;
+    position:absolute;
 }
 
 li{
-    height: 3rem;
-    width: 100%;
+    height: 1.5rem;
+    width: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,6 +85,9 @@ li{
     padding-top: 0.5rem 0.5rem;
     color: #2a2a2a;
     transition: all 0.3s;
+    min-width: fit-content;
+    white-space: nowrap;/*prevent text wrapping*/
+    overflow: hidden;
 }
 
 li:hover {
@@ -85,25 +99,32 @@ li:hover {
 a {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0.5rem;
     padding: 0.5rem 0.5rem;
     color: #2a2a2a;
     transition: all 0.3s;
+    text-decoration: none; /*remove underline*/
 }
 
 span {
     opacity: 0;
-    transition: opacity 0.5s;
+    visibility: hidden;
+    display: inline-block;
+    transition: all 0.5s ease;
     color: white;
     font-weight: bold;
     white-space: nowrap;
     order: 1;
-    display: none;
+    width: 0;
+    overflow: hidden;
 }
 
 a:hover span {
     opacity: 1;
+    visibility: visible;
+    width: auto;
+    margin-right: 0.5rem;
     display: block;
 }
 
@@ -115,44 +136,47 @@ i {
 
 a:hover i {
     color: white;
-    transform: scale(1.2);
+    transform: scale(1.2);   
 }
 
-/*buttons*/ .btnOut, .btnIn {
-    background-color: #970747;
-    color: black;
-    border: none;
-    padding: 0.5rem;
-    margin-top: 1rem;
-    width: 100%;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 0.5rem;
-}
-.btnOut:hover, .btnIn:hover {
-    background-color: #660530;
-    color: white;   
-}
-/* end sidebar=header */
+/* end header */
+
+/* main*/
+main {
+   padding: 1.5rem;
+   flex: 1;
+   min-height: 10rem;
+   margin-inline: auto;
+} 
 
 /* search bar */
 .search-bar {
     margin-top: 0.5rem;
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    flex-shrink: 0;
+    flex:1;
+    max-width: 600px;
+    min-width: 300px;
+    margin: 0 auto;
+    /* position: fixed; */
 }
 .search-bar input {
     padding: 0.5rem;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 0.5rem;
-    width: 70%;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 2rem 2rem 2rem 2rem;
+    outline: none;
+    
 }
 .search-bar button {
     padding: 0.5rem 1rem;
-    background-color: #c8095e;
+    background-color:#a0064b ;
     color: white;
     border: none;
     border-radius: 0.5rem;
@@ -160,7 +184,7 @@ a:hover i {
     transition: background-color 0.3s;
 }
 .search-bar button:hover {
-    background-color: #a0064b;
+    background-color: #660530;
 }
 /* end search bar */
 
@@ -180,6 +204,10 @@ a:hover i {
 
 .container-slider {
     padding: 2rem;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
 }
 
 .sliderWrapper {
@@ -230,3 +258,28 @@ a:hover i {
 }
 
 /* end slider */
+
+/* end main */
+
+/* the magic for small screens */
+@media (max-width: 768px) {
+    aside {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0.5rem 0;
+        z-index: 1000;
+    }
+    /*for thing we don't need it*/.btnIn, .btnOut {
+        display: none;
+    }
+    .container-slider{
+        margin-top: 80px;
+        margin-right: 0;
+    }
+}
+/* end magic */
