@@ -308,33 +308,121 @@ main {
 
 /* end main */
 
-/* the magic for small screens */
-@media (max-width: 768px) {
-    aside {
-        width: 100%;
-        height: auto;
-        position: fixed;
-        top: 0;
-        left: 0;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 0.5rem 0;
-        z-index: 1000;
-    }
-    /*for thing we don't need it*/.btnIn, .btnOut {
-        display: none;
-    }
-    .container-slider{
-        margin-top: 80px;
-        margin-right: 0;
-    }
+/*login page*/
+
+.login-body{
+    font-family: 'Cairo', sans-serif;
+    background-color: #fef4e8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-/* end magic */
 
-/*login*/
+.login-container{
+}
 
+/* logo */
 .login-logo img{
     width: 120px;
+    height: 120px;
     margin-bottom:1.5rem ;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    display: block;
+}
 
+/* bar email */
+.group {
+ position: relative;
+}
+
+.input {
+ font-size: 16px;
+ padding: 10px 10px 10px 5px;
+ display: block;
+ width: 200px;
+ border: none;
+ border-bottom: 1px solid #515151;
+ background: transparent;
+}
+
+.input:focus {
+ outline: none;
+}
+
+label {
+ color: #999;
+ font-size: 18px;
+ font-weight: normal;
+ position: absolute;
+ pointer-events: none;
+ left: 5px;
+ top: 10px;
+ transition: 0.2s ease all;
+ -moz-transition: 0.2s ease all;
+ -webkit-transition: 0.2s ease all;
+}
+
+.input:focus ~ label, .input:valid ~ label {
+ top: -20px;
+ font-size: 14px;
+ color: #c8095e;
+}
+
+.bar {
+ position: relative;
+ display: block;
+ width: 200px;
+}
+
+.bar:before, .bar:after {
+ content: '';
+ height: 2px;
+ width: 0;
+ bottom: 1px;
+ position: absolute;
+ background: #c8095e;
+ transition: 0.2s ease all;
+ -moz-transition: 0.2s ease all;
+ -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+ left: 50%;
+}
+
+.bar:after {
+ right: 50%;
+}
+
+.input:focus ~ .bar:before, .input:focus ~ .bar:after {
+ width: 50%;
+}
+
+.highlight {
+ position: absolute;
+ height: 60%;
+ width: 100px;
+ top: 25%;
+ left: 0;
+ pointer-events: none;
+ opacity: 0.5;
+}
+
+.input:focus ~ .highlight {
+ animation: inputHighlighter 0.3s ease;
+}
+
+@keyframes inputHighlighter {
+ from {
+  background: #c8095e;
+ }
+
+ to {
+  width: 0;
+  background: transparent;
+ }
 }
