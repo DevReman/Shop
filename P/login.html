@@ -6,37 +6,31 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!---font---><link href="https://fonts.googleapis.com/css2?family=cairo:wght@400;700&display=swap rel=stylesheet">
     <!---icon--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!---css---><link rel="stylesheet" href="/css/style.css">
+    <!---css---><link rel="stylesheet" href="/css/log-in.css">
     <title>Femme</title>
 </head>
-<body class="login-body">
-    <div class="login-container">
-    <div class="login-logo">
-        <img class="logo-img" src="/img/2.logo.png" alt="Logo">
-    </div>
-    <form class="login">
-        <p>تسجيل الدخول</p>
-
-    <div class="group">
-      <input required="" type="text" class="input">
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>البريد الالكتروني</label>
-    </div>
-
-    <div class="group">
-      <input required="" type="text" class="input">
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label> كلمة المرور</label>
-    </div>
-            <button type="submit" class="login-btn">الدخول</button>
-    </form>
-    <div class="from-footer">
-        <a href="/">نسيت كلمة المرور</a>
-        <hr>
-        <a href="/index.html" class="back-home">العودة للرئيسية</a>
-    </div>
+<body>
+    <div class="card">
+        <div class="hero">
+        <div class="bg"></div>
+        </div>
+        <form>
+            <img class="main-logo" src="/img/main-logo.png">
+            <div class="soicals">
+                <button class="social-btn">
+                    <img class="Google" src="/img/google.icon.png">
+                    <p><span class="extra-text"> تسجيل دخول عبر </span></p>
+                </button>
+                <button class="social-btn">
+                    <img class="Apple" src="/img/apple.icon.png">
+                    <p><span class="extra-text"> تسجيل دخول عبر </span></p>
+                </button>
+            </div>
+            <span class="or">أو</span>
+            <input type="email" placeholder="  البريد الالكتروني  " required>
+            <input type="password" placeholder="  كلمة المرور  " required>
+            <button type="submit" class="btn">تسجيل الدخول</button>
+        </form>
     </div>
 </body>
 </html>
